@@ -5,7 +5,7 @@ use warnings;
 use Cinnamon::DSL;
 
 set application => 'prepan';
-set repository  => 'git://github.com/prepan-developers/prepan.git';
+set repository  => 'git://github.com/CPAN-API/prepan.git';
 set user        => 'deployer';
 
 role development => [qw(local.prepan.org)], {
