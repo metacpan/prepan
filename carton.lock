@@ -64,7 +64,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -597,7 +597,7 @@
                "unknown"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -752,7 +752,7 @@
                "Removed from Alzabo and packaged by Terrence Brannon,\n<tbone@cpan.org>."
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -1592,7 +1592,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -2342,7 +2342,7 @@
                "Based on code originally by Leo Lapworth, with many changes added by\nby Leon Brocard <acme@astray.com>."
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -2664,7 +2664,7 @@
                "Dave Rolsky <autarch@urth.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "artistic_2"
             ],
@@ -2765,7 +2765,7 @@
                "Maintained by Dave Rolsky <autarch@urth.org>."
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -2876,7 +2876,7 @@
                "Dave Rolsky <autarch@urth.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -2985,7 +2985,7 @@
                "Dave Rolsky <autarch@urth.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -8701,6 +8701,73 @@
          "target" : "Email::Valid::Loose",
          "version" : "0.05"
       },
+      "Encode::Base58::BigInt" : {
+         "dist" : "Encode-Base58-BigInt-0.03",
+         "mymeta" : {
+            "abstract" : "Base58 encodings with BigInt",
+            "author" : [
+               "cho45 <cho45@lowreal.net>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Install version 1.06, CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Encode-Base58-BigInt",
+            "no_index" : {
+               "directory" : [
+                  "inc",
+                  "t",
+                  "xt"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.36",
+                     "Test::Most" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "6.36"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Exporter::Lite" : "0",
+                     "Filter::Util::Call" : "0",
+                     "Math::BigInt" : "0"
+                  }
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ],
+               "repository" : {
+                  "type" : "git",
+                  "url" : "git://github.com/cho45/Encode-Base58-BigInt.git"
+               }
+            },
+            "version" : "0.03"
+         },
+         "name" : "Encode::Base58::BigInt",
+         "pathname" : "S/SA/SATOH/Encode-Base58-BigInt-0.03.tar.gz",
+         "provides" : {
+            "Encode::Base58::BigInt" : {
+               "file" : "Encode/Base58/BigInt.pm",
+               "version" : "0.03"
+            }
+         },
+         "target" : "Encode::Base58::BigInt",
+         "version" : "0.03"
+      },
       "Encode::Locale" : {
          "dist" : "Encode-Locale-1.03",
          "mymeta" : {
@@ -9191,7 +9258,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ gmail.comE<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -10574,6 +10641,58 @@
          "target" : "IO::Socket::SSL",
          "version" : "1.84"
       },
+      "IO::String" : {
+         "dist" : "IO-String-1.08",
+         "mymeta" : {
+            "abstract" : "unknown",
+            "author" : [
+               "unknown"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "unknown"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "IO-String",
+            "no_index" : {
+               "directory" : [
+                  "t",
+                  "inc"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "ExtUtils::MakeMaker" : "0"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {}
+               }
+            },
+            "release_status" : "stable",
+            "version" : "1.08"
+         },
+         "name" : "IO::String",
+         "pathname" : "G/GA/GAAS/IO-String-1.08.tar.gz",
+         "provides" : {
+            "IO::String" : {
+               "file" : "IO/String.pm",
+               "version" : "1.08"
+            }
+         },
+         "target" : "IO::String",
+         "version" : "1.08"
+      },
       "JSON" : {
          "dist" : "JSON-2.53",
          "mymeta" : {
@@ -11586,7 +11705,7 @@
                "Andrew Main (Zefram) <zefram@fysh.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -13320,7 +13439,7 @@
                "Dave Rolsky, <autarch@urth.org> and Ilya Martynov <ilya@martynov.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "artistic_2"
             ],
@@ -13413,7 +13532,7 @@
                "Ken Williams <kwilliams@cpan.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -14213,6 +14332,434 @@
          "target" : "Qudo::Parallel::Manager",
          "version" : "0.06"
       },
+      "Redis" : {
+         "dist" : "Redis-1.961",
+         "mymeta" : {
+            "abstract" : "Perl binding for Redis database",
+            "author" : [
+               "Pedro Melo <melo@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "artistic_2"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Redis",
+            "no_index" : {
+               "directory" : [
+                  "corpus",
+                  "examples",
+                  "inc",
+                  "share",
+                  "t",
+                  "xt"
+               ],
+               "namespace" : [
+                  "Local",
+                  "t::lib"
+               ],
+               "package" : [
+                  "DB"
+               ]
+            },
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Digest::SHA" : "0",
+                     "IO::String" : "0",
+                     "IPC::Cmd" : "0",
+                     "Test::Deep" : "0",
+                     "Test::Fatal" : "0",
+                     "Test::More" : "0.98"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Try::Tiny" : "0"
+                  }
+               }
+            },
+            "provides" : {
+               "Redis" : {
+                  "file" : "lib/Redis.pm",
+                  "version" : "1.961"
+               },
+               "Redis::Hash" : {
+                  "file" : "lib/Redis/Hash.pm",
+                  "version" : "1.961"
+               },
+               "Redis::List" : {
+                  "file" : "lib/Redis/List.pm",
+                  "version" : "1.961"
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "bugtracker" : {
+                  "web" : "https://github.com/melo/perl-redis/issues"
+               },
+               "homepage" : "http://metacpan.org/release/Redis/",
+               "repository" : {
+                  "type" : "git",
+                  "url" : "git://github.com/melo/perl-redis.git"
+               }
+            },
+            "version" : "1.961",
+            "x_Dist_Zilla" : {
+               "perl" : {
+                  "version" : "5.014002"
+               },
+               "plugins" : [
+                  {
+                     "class" : "Dist::Zilla::Plugin::GitHub::Meta",
+                     "name" : "@Author::MELO/@GitHub/GitHub::Meta",
+                     "version" : "0.30"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::GitHub::Update",
+                     "name" : "@Author::MELO/@GitHub/GitHub::Update",
+                     "version" : "0.30"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Git::NextVersion",
+                     "name" : "@Author::MELO/Git::NextVersion",
+                     "version" : "2.006"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::GenerateFile",
+                     "name" : "@Author::MELO/GenerateManifestSkip",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::GenerateFile",
+                     "name" : "@Author::MELO/GenerateTravisCfg",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::GatherDir",
+                     "name" : "@Author::MELO/GatherDir",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::PruneCruft",
+                     "name" : "@Author::MELO/PruneCruft",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::ManifestSkip",
+                     "name" : "@Author::MELO/ManifestSkip",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::PruneFiles",
+                     "name" : "@Author::MELO/PruneRepoMetaFiles",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Authority",
+                     "name" : "@Author::MELO/Authority",
+                     "version" : "1.006"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::NextRelease",
+                     "name" : "@Author::MELO/NextRelease",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::OurPkgVersion",
+                     "name" : "@Author::MELO/OurPkgVersion",
+                     "version" : "0.004000"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::PodWeaver",
+                     "name" : "@Author::MELO/PodWeaver",
+                     "version" : "3.101641"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::License",
+                     "name" : "@Author::MELO/License",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Readme",
+                     "name" : "@Author::MELO/Readme",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::AutoPrereqs",
+                     "name" : "@Author::MELO/AutoPrereqs",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::MetaNoIndex",
+                     "name" : "@Author::MELO/MetaNoIndex",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::MetaProvides::Package",
+                     "name" : "@Author::MELO/MetaProvides::Package",
+                     "version" : "1.14000001"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::MetaConfig",
+                     "name" : "@Author::MELO/MetaConfig",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::MetaYAML",
+                     "name" : "@Author::MELO/MetaYAML",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::MetaJSON",
+                     "name" : "@Author::MELO/MetaJSON",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Prereqs",
+                     "config" : {
+                        "Dist::Zilla::Plugin::Prereqs" : {
+                           "phase" : "test",
+                           "type" : "requires"
+                        }
+                     },
+                     "name" : "@Author::MELO/TestMoreWithSubtests",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::ExecDir",
+                     "name" : "@Author::MELO/ExecDir",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::ShareDir",
+                     "name" : "@Author::MELO/ShareDir",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::MakeMaker",
+                     "name" : "@Author::MELO/MakeMaker",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::Pod::No404s",
+                     "name" : "@Author::MELO/Test::Pod::No404s",
+                     "version" : "1.001"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::UnusedVars",
+                     "name" : "@Author::MELO/@TestingMania/Test::UnusedVars",
+                     "version" : "2.000003"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::Synopsis",
+                     "name" : "@Author::MELO/@TestingMania/Test::Synopsis",
+                     "version" : "2.000002"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::Version",
+                     "name" : "@Author::MELO/@TestingMania/Test::Version",
+                     "version" : "0.002004"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::PodCoverageTests",
+                     "name" : "@Author::MELO/@TestingMania/PodCoverageTests",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::CPAN::Changes",
+                     "name" : "@Author::MELO/@TestingMania/Test::CPAN::Changes",
+                     "version" : "0.005"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::CPAN::Meta::JSON",
+                     "name" : "@Author::MELO/@TestingMania/Test::CPAN::Meta::JSON",
+                     "version" : "0.003"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::DistManifest",
+                     "name" : "@Author::MELO/@TestingMania/Test::DistManifest",
+                     "version" : "2.000002"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::MetaTests",
+                     "name" : "@Author::MELO/@TestingMania/MetaTests",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::Compile",
+                     "name" : "@Author::MELO/@TestingMania/Test::Compile",
+                     "version" : "1.112820"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::Kwalitee",
+                     "name" : "@Author::MELO/@TestingMania/Test::Kwalitee",
+                     "version" : "2.03"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::NoTabsTests",
+                     "name" : "@Author::MELO/@TestingMania/NoTabsTests",
+                     "version" : "0.01"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::MinimumVersion",
+                     "name" : "@Author::MELO/@TestingMania/Test::MinimumVersion",
+                     "version" : "2.000002"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::Pod::LinkCheck",
+                     "name" : "@Author::MELO/@TestingMania/Test::Pod::LinkCheck",
+                     "version" : "1.001"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Test::EOL",
+                     "name" : "@Author::MELO/@TestingMania/Test::EOL",
+                     "version" : "0.07"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::PodSyntaxTests",
+                     "name" : "@Author::MELO/@TestingMania/PodSyntaxTests",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::MojibakeTests",
+                     "name" : "@Author::MELO/@TestingMania/MojibakeTests",
+                     "version" : "0.3"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Manifest",
+                     "name" : "@Author::MELO/Manifest",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::CheckExtraTests",
+                     "name" : "@Author::MELO/CheckExtraTests",
+                     "version" : "0.007"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::CheckChangesHasContent",
+                     "name" : "@Author::MELO/CheckChangesHasContent",
+                     "version" : "0.006"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::TestRelease",
+                     "name" : "@Author::MELO/TestRelease",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::ConfirmRelease",
+                     "name" : "@Author::MELO/ConfirmRelease",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::UploadToCPAN",
+                     "name" : "@Author::MELO/UploadToCPAN",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Git::CommitBuild",
+                     "name" : "@Author::MELO/Git::CommitBuild",
+                     "version" : "2.006"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Git::Check",
+                     "name" : "@Author::MELO/@Git/Check",
+                     "version" : "2.006"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Git::Commit",
+                     "name" : "@Author::MELO/@Git/Commit",
+                     "version" : "2.006"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Git::Tag",
+                     "name" : "@Author::MELO/@Git/Tag",
+                     "version" : "2.006"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Git::Push",
+                     "name" : "@Author::MELO/@Git/Push",
+                     "version" : "2.006"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::InstallRelease",
+                     "name" : "@Author::MELO/InstallRelease",
+                     "version" : "0.008"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::PrereqsClean",
+                     "name" : "@Author::MELO/PrereqsClean",
+                     "version" : "0.92"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::Clean",
+                     "name" : "@Author::MELO/Clean",
+                     "version" : "0.07"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::FinderCode",
+                     "name" : ":InstallModules",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::FinderCode",
+                     "name" : ":IncModules",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::FinderCode",
+                     "name" : ":TestFiles",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::FinderCode",
+                     "name" : ":ExecFiles",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::FinderCode",
+                     "name" : ":ShareFiles",
+                     "version" : "4.300028"
+                  },
+                  {
+                     "class" : "Dist::Zilla::Plugin::FinderCode",
+                     "name" : ":MainModule",
+                     "version" : "4.300028"
+                  }
+               ],
+               "zilla" : {
+                  "class" : "Dist::Zilla::Dist::Builder",
+                  "config" : {
+                     "is_trial" : "0"
+                  },
+                  "version" : "4.300028"
+               }
+            },
+            "x_authority" : "cpan:MELO"
+         },
+         "name" : "Redis",
+         "pathname" : "M/ME/MELO/Redis-1.961.tar.gz",
+         "provides" : {
+            "Redis" : {
+               "file" : "Redis.pm",
+               "version" : "1.961"
+            },
+            "Redis::Hash" : {
+               "file" : "Redis/Hash.pm",
+               "version" : "1.961"
+            },
+            "Redis::List" : {
+               "file" : "Redis/List.pm",
+               "version" : "1.961"
+            }
+         },
+         "target" : "Redis",
+         "version" : "1.961"
+      },
       "RedisDB" : {
          "dist" : "RedisDB-2.12",
          "mymeta" : {
@@ -14316,7 +14863,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -14407,7 +14954,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -14475,7 +15022,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -14797,7 +15344,7 @@
                "file" : "Starman/Server.pm"
             }
          },
-         "target" : "Plack::Handler::Starman",
+         "target" : "Starman",
          "version" : "0.3006"
       },
       "Stream::Buffered" : {
@@ -16190,7 +16737,7 @@
                "Curtis \"Ovid\" Poe <ovid@cpan.org>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -16249,7 +16796,7 @@
                "Adrian Howard <adrianh@quietstars.com>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -17415,7 +17962,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -17661,7 +18208,7 @@
                "Gurusamy Sarathy        gsar@umich.edu"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],
@@ -17719,7 +18266,7 @@
                "Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>"
             ],
             "dynamic_config" : 0,
-            "generated_by" : "Module::Build version 0.3901, CPAN::Meta::Converter version 2.120921",
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
             "license" : [
                "perl_5"
             ],

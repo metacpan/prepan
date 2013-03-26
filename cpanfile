@@ -10,7 +10,7 @@ requires 'DBD::mysql';
 requires 'Teng' => '0.14';
 requires 'FormValidator::Lite';
 
-requires 'RedisDB';
+requires 'Redis';
 
 requires 'DateTime';
 requires 'DateTime::Format::MySQL';

@@ -3,7 +3,7 @@ use Mouse;
 
 has storage => (
     is      => 'ro',
-    isa     => 'RedisDB',
+    isa     => 'Redis',
     lazy    => 1,
     builder => 'build_storage',
 );
@@ -17,7 +17,7 @@ use PrePAN::Config;
 our $redis;
 sub build_storage {
     my $self = shift;
-    $redis ||= RedisDB->new(%{PrePAN::Config->param('redis')});
+    $redis ||= Redis->new(%{PrePAN::Config->param('redis')});
 }
 
 sub count {
