@@ -11,7 +11,7 @@ has storage => (
 no Mouse;
 __PACKAGE__->meta->make_immutable;
 
-use RedisDB;
+use Redis;
 use PrePAN::Config;
 
 our $redis;
