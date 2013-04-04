@@ -3,6 +3,10 @@ use utf8;
 use strict;
 use warnings;
 
+BEGIN {
+    $ENV{PREPAN_ENV} = 'test';
+};
+
 use parent qw(Test::Class);
 
 use Path::Class qw(dir);

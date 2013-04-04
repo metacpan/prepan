@@ -20,6 +20,7 @@ $ cpanm carton
 ## Local database setting
 
 There is a setup script for database setting. Please run below code at PrePAN root directory.
+It also setup database for test.
 
 ```sh
 $ ./script/setup.sh
@@ -42,6 +43,14 @@ $ carton exec -- plackup
 ```
 
 Enjoy Hacking!!
+
+## Local test setting
+
+Run below command if you want to run tests.
+
+```sh
+$ carton exec -- prove -v t/**/*.t
+```
 
 ## Contact
 
