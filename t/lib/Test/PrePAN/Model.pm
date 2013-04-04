@@ -16,26 +16,7 @@ use Class::Load;
 
 sub startup_model : Test(startup) {
     my $self = shift;
-    my $mysqld = Test::mysqld->new(
-        my_cnf => {
-            'skip-networking' => '',
-        }
-    ) or plan skip_all => $Test::mysqld::errstr;
-
-    my $dbh = DBI->connect(
-        $mysqld->dsn . ';mysql_multi_statements=1',
-    );
-    $dbh->do('CREATE DATABASE prepan');
-    $dbh->do('use prepan');
-    my $sql = file(__FILE__)->dir->parent->parent->parent->parent->file('db/schema.sql')->slurp;
-    $dbh->do($sql);
-
-    $PrePAN::Model::instance = undef;   # PrePAN::Twitter::PrePAN make model before here
-    my $model = PrePAN::Model->new({
-        connect_info => [$mysqld->dsn(dbname => 'prepan', 'root', '' )]
-    });
-
-    $self->mysqld($mysqld);
+    my $model = PrePAN::Model->new;
     $self->model($model);
 }
 
