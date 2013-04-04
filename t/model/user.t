@@ -50,15 +50,16 @@ sub oauth : Tests {
     diag 'setter';
     {
         my $user  = $self->create_test_user;
-        isnt $user->name, 'prepan@github';
+        my $name  = $user->name;
+        isnt $user->name, $name . '@github';
 
         $user->oauth(github => {
             external_user_id => $self->model->uuid,
-            info             => { login => 'prepan' },
+            info             => { login => $name },
         });
 
-        is $user->oauth('github')->info->param('login'), 'prepan';
-        is $user->name, 'prepan@github';
+        is $user->oauth('github')->info->param('login'), $name;
+        is $user->name, $name . '@github';
     }
 }
 
