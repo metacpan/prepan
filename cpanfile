@@ -48,8 +48,10 @@ on develop => sub {
 };
 
 on test => sub {
+    requires 'Test::Class';
     requires 'Module::Install';
     requires 'Project::Libs';
     requires 'Test::mysqld';
     requires 'Class::Accessor::Lite';
+    requires 'String::Random';
 };
