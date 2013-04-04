@@ -43,6 +43,15 @@ $ carton exec -- plackup
 
 Enjoy Hacking!!
 
+## Local test setting
+
+There is a setup script for test database setting.  Please run blow code at PrePAN root directory.
+
+```sh
+$ ./t/setup-test-db.sh
+$ carton exec -- prove -v t/**/*.t
+```
+
 ## Contact
 
 You can ask [@prepanorg](http://twitter.com/prepanorg/) or [@shiba_yu36](http://twitter.com/shiba_yu36/) if you have a question.
