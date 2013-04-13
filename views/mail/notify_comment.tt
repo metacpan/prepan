@@ -1,6 +1,6 @@
 Hi, [% module.user.name %]!
 
-[% subject_user.name %] has posted a comment on your module.
+[% subject_user.name %] has posted a comment on the discussion you've been joining.
 
 "[% review.comment %]"
 
