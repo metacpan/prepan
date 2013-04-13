@@ -38,6 +38,37 @@ sub notify_comment : Tests {
     };
 }
 
+sub notify_vote : Tests {
+    my $self    =  shift;
+    my $user    =  $self->create_test_user;
+    my $module  =  $self->create_test_module(
+        user_id => $user->short_id,
+    );
+    my $vote_user = $self->create_test_user;
+    my $vote = $self->create_test_vote(module_id => $module->id);
+
+    PrePAN::Notify->notify_vote($user, {
+        subject_user => $vote_user,
+        module       => $module,
+        vote         => $vote,
+    });
+
+    my $timeline = $user->timeline;
+    $timeline->count, 1;
+
+    my @entries = $timeline->entries(0, 0);
+
+    is        scalar(@entries), 1;
+    is_deeply $entries[0]->as_serializable, {
+        subject_id => $vote_user->short_id,
+        object_id  => $module->short_id,
+        verb       => 'vote',
+        info       => {
+            created => $vote->created.q(),
+        },
+    };
+}
+
 sub _notify : Tests {
     my $self = shift;
     my $user = $self->create_test_user;

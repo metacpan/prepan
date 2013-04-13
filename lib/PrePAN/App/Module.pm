@@ -230,13 +230,10 @@ sub vote {
     return if !$self->user;
 
     if (my $vote = $self->module->vote_by($self->user)) {
-        $self->module->user->timeline->add({
-            subject_id => $self->user->short_id,
-            object_id  => $self->module->short_id,
-            verb       => 'vote',
-            info       => {
-                created => $vote->created.q(),
-            },
+        PrePAN::Notify->notify_vote($self->module->user, {
+            subject_user => $self->user,
+            module       => $self->module,
+            vote         => $vote,
         });
 
         return $vote;

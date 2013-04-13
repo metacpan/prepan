@@ -20,6 +20,23 @@ sub notify_comment {
     });
 }
 
+sub notify_vote {
+    my ($class, $user, $args) = @_;
+
+    my $subject_user = $args->{subject_user};
+    my $module       = $args->{module};
+    my $vote         = $args->{vote};
+
+    $class->_notify($user, {
+        subject_id => $subject_user->short_id,
+        object_id  => $module->short_id,
+        verb       => 'vote',
+        info       => {
+            created => $vote->created.q(),
+        },
+    });
+}
+
 sub _notify {
     my ($class, $user, $entry) = @_;
 
