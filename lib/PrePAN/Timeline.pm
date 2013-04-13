@@ -58,7 +58,6 @@ sub add {
         }
     }
 
-    $self->user->update({ unread_count => $self->user->unread_count + 1 });
     $entry;
 }
 

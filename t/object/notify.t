@@ -21,8 +21,11 @@ sub notify_comment : Tests {
         review       => $review,
     });
 
+    $user = $user->refetch;
+    is $user->unread_count, 1;
+
     my $timeline = $user->timeline;
-    $timeline->count, 1;
+    is $timeline->count, 1;
 
     my @entries = $timeline->entries(0, 0);
 
@@ -53,8 +56,11 @@ sub notify_vote : Tests {
         vote         => $vote,
     });
 
+    $user = $user->refetch;
+    is $user->unread_count, 1;
+
     my $timeline = $user->timeline;
-    $timeline->count, 1;
+    is $timeline->count, 1;
 
     my @entries = $timeline->entries(0, 0);
 
@@ -84,8 +90,11 @@ sub _notify : Tests {
 
     PrePAN::Notify->_notify($user, $entry);
 
+    $user = $user->refetch;
+    is $user->unread_count, 1;
+
     my $timeline = $user->timeline;
-    $timeline->count, 1;
+    is $timeline->count, 1;
 
     my @entries = $timeline->entries(0, 0);
 
