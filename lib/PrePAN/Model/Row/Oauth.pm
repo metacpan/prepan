@@ -61,6 +61,17 @@ sub favicon {
     $favicon;
 }
 
+sub email {
+    my $self  = shift;
+    my $email = '';
+
+    if ($self->service eq 'github') {
+        $email = $self->info->param('email');
+    }
+
+    $email;
+}
+
 sub profile_image {
     my $self = shift;
     my $url;

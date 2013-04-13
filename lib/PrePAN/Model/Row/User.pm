@@ -66,6 +66,17 @@ sub is_facebook_user {
     $self->external_service eq 'facebook';
 }
 
+sub email {
+    my $self  = shift;
+    my $email = '';
+
+    if ($self->is_github_user) {
+        $email = $self->github->email;
+    }
+
+    $email;
+}
+
 sub profile_image {
     my $self = shift;
     my $url;
