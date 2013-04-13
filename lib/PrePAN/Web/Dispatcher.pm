@@ -230,11 +230,7 @@ post qr{^/user/(?:[[:alnum:]]{10,})\.edit$}o => sub {
 
     my $app = $c->app->load(
         'user_info',
-        +{
-            map {
-                $_ => (defined $c->req->param($_) ? $c->req->param($_) : '')
-            } qw(url pause_id bitbucket description email_notification)
-        },
+        +{ map { $_ => $c->req->param($_) || '' } qw(url pause_id bitbucket description email_notification) },
     );
 
     if ($app->edit) {

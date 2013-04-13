@@ -83,11 +83,6 @@ sub edit {
         return;
     }
     else {
-        # If empty string, we regard that user permits us to notify via Email
-        if ($self->email_notification eq '') {
-            $self->email_notification = 1;
-        }
-
         $params->{no_email_notification} = !$self->email_notification;
         $self->user->update($params);
     }
