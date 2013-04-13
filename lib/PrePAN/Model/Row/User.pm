@@ -123,7 +123,7 @@ sub profile_image_bigger {
 
 sub path {
     my ($self, $path) = @_;
-    sprintf '/user/%s%s', $self->short_id, $path || '';
+    sprintf '/user/%s%s', $self->name, $path || '';
 }
 
 sub register_oauth_id {
