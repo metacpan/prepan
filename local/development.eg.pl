@@ -3,6 +3,8 @@ return +{
     username => 'root',
     password => '',
 
+    sendmail => 0,
+
     redis    => {
         host => 'localhost',
         port => 6379,
