@@ -56,7 +56,7 @@ sub _notify {
 sub _notify_by_email {
     my ($class, $user, $template, $args) = @_;
 
-    return unless $user->email;
+    return unless $user->should_receive_email_notification;
 
     my $subject = delete $args->{subject};
 
