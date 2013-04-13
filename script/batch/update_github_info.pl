@@ -2,10 +2,13 @@
 use strict;
 use warnings;
 
+use Getopt::Long;
 use JSON;
 use LWP::UserAgent;
 
 use PrePAN::Model;
+
+GetOptions("dry-run" => \my $dry_run);
 
 my $ua     = LWP::UserAgent->new;
 my $oauths = model->search('oauth', { service => 'github' })->all;
@@ -21,5 +24,10 @@ for my $oauth (@$oauths) {
         email       => $data->{email} || '',
     };
 
-    $oauth->update({ info => $info });
+    if ($dry_run) {
+        print STDERR encode_json($info), "\n";
+    }
+    else {
+        $oauth->update({ info => $info });
+    }
 }
