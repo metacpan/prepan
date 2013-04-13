@@ -196,11 +196,7 @@ sub post_review {
     for my $user (@users) {
         next if $self->user->id == $user->id;
 
-        PrePAN::Notify->notify_comment($user, {
-            subject_user => $self->user,
-            module       => $self->module,
-            review       => $review,
-        });
+        PrePAN::Notify->notify_comment($user, $review);
     }
 
     $review;
@@ -230,11 +226,7 @@ sub vote {
     return if !$self->user;
 
     if (my $vote = $self->module->vote_by($self->user)) {
-        PrePAN::Notify->notify_vote($self->module->user, {
-            subject_user => $self->user,
-            module       => $self->module,
-            vote         => $vote,
-        });
+        PrePAN::Notify->notify_vote($self->module->user, $vote);
 
         return $vote;
     }

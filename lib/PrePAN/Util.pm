@@ -15,6 +15,7 @@ use parent qw(Exporter);
 our @EXPORT = qw(
     now
     generate_session_id
+    convert_to_short_id
     root
     camelize
     encode_base58
@@ -44,6 +45,11 @@ sub now (@) {
 
 sub generate_session_id () {
     Digest::SHA1::sha1_hex(rand() . $$ . {} . time);
+}
+
+sub convert_to_short_id ($) {
+    my $id = shift;
+    return encode_base58($id);
 }
 
 my $root = dir(__FILE__)->parent->parent->parent;

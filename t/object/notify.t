@@ -13,13 +13,12 @@ sub notify_comment : Tests {
         user_id => $user->short_id,
     );
     my $subject_user = $self->create_test_user;
-    my $review = $self->create_test_review(module_id => $module->id);
+    my $review = $self->create_test_review(
+        module_id => $module->id,
+        user_id   => $subject_user->id,
+    );
 
-    PrePAN::Notify->notify_comment($user, {
-        subject_user => $subject_user,
-        module       => $module,
-        review       => $review,
-    });
+    PrePAN::Notify->notify_comment($user, $review);
 
     $user = $user->refetch;
     is $user->unread_count, 1;
@@ -48,13 +47,12 @@ sub notify_vote : Tests {
         user_id => $user->short_id,
     );
     my $vote_user = $self->create_test_user;
-    my $vote = $self->create_test_vote(module_id => $module->id);
+    my $vote = $self->create_test_vote(
+        user_id   => $vote_user->id,
+        module_id => $module->id,
+    );
 
-    PrePAN::Notify->notify_vote($user, {
-        subject_user => $vote_user,
-        module       => $module,
-        vote         => $vote,
-    });
+    PrePAN::Notify->notify_vote($user, $vote);
 
     $user = $user->refetch;
     is $user->unread_count, 1;

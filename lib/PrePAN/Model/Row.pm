@@ -8,7 +8,7 @@ use PrePAN::Model;
 
 sub short_id {
     my $self = shift;
-    encode_base58 $self->id;
+    convert_to_short_id $self->id;
 }
 
 sub search_with_users {

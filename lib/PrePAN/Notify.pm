@@ -2,16 +2,15 @@ package PrePAN::Notify;
 use strict;
 use warnings;
 
-sub notify_comment {
-    my ($class, $user, $args) = @_;
+use PrePAN::Util;
 
-    my $subject_user = $args->{subject_user};
-    my $module       = $args->{module};
-    my $review       = $args->{review};
+sub notify_comment {
+    my ($class, $user, $review) = @_;
 
     $class->_notify($user, {
-        subject_id => $review->is_public ? $subject_user->short_id : undef,
-        object_id  => $module->short_id,
+        subject_id => $review->is_public ?
+            convert_to_short_id($review->user_id) : undef,
+        object_id  => convert_to_short_id $review->module_id,
         verb       => 'comment',
         info       => {
             content => $review->comment,
@@ -21,15 +20,11 @@ sub notify_comment {
 }
 
 sub notify_vote {
-    my ($class, $user, $args) = @_;
-
-    my $subject_user = $args->{subject_user};
-    my $module       = $args->{module};
-    my $vote         = $args->{vote};
+    my ($class, $user, $vote) = @_;
 
     $class->_notify($user, {
-        subject_id => $subject_user->short_id,
-        object_id  => $module->short_id,
+        subject_id => convert_to_short_id $vote->user_id,
+        object_id  => convert_to_short_id $vote->module_id,
         verb       => 'vote',
         info       => {
             created => $vote->created.q(),
