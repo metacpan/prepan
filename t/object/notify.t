@@ -1,0 +1,68 @@
+package t::PrePAN::Notify;
+use Project::Libs;
+
+use Test::PrePAN;
+use Test::PrePAN::Model;
+
+use PrePAN::Notify;
+
+sub notify_comment : Tests {
+    my $self    =  shift;
+    my $user    =  $self->create_test_user;
+    my $module  =  $self->create_test_module(
+        user_id => $user->short_id,
+    );
+    my $subject_user = $self->create_test_user;
+    my $review = $self->create_test_review(module_id => $module->id);
+
+    PrePAN::Notify->notify_comment($user, {
+        subject_user => $subject_user,
+        module       => $module,
+        review       => $review,
+    });
+
+    my $timeline = $user->timeline;
+    $timeline->count, 1;
+
+    my @entries = $timeline->entries(0, 0);
+
+    is        scalar(@entries), 1;
+    is_deeply $entries[0]->as_serializable, {
+        subject_id => $subject_user->short_id,
+        object_id  => $module->short_id,
+        verb       => 'comment',
+        info       => {
+            content => $review->comment,
+            created => $review->created.q(),
+        },
+    };
+}
+
+sub _notify : Tests {
+    my $self = shift;
+    my $user = $self->create_test_user;
+    my $module   = $self->create_test_module(
+        user_id => $user->short_id,
+    );
+    my $entry = {
+        subject_id => $user->short_id,
+        object_id  => $module->short_id,
+        verb       => 'review',
+        info       => {},
+    };
+
+    PrePAN::Notify->_notify($user, $entry);
+
+    my $timeline = $user->timeline;
+    $timeline->count, 1;
+
+    my @entries = $timeline->entries(0, 0);
+
+    is        scalar(@entries), 1;
+    isa_ok    $entries[0], 'PrePAN::Timeline::Entry';
+    is_deeply $entries[0]->as_serializable, $entry;
+}
+
+__PACKAGE__->runtests;
+
+!!1;
