@@ -26,7 +26,7 @@ sub work {
         review => { id => $arg->{review_id} },
     );
     my $module = model->single(
-        review => { id => $arg->{module_id} },
+        module => { id => $arg->{module_id} },
     );
 
     my $view = PrePAN::View->new;
