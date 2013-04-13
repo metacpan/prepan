@@ -3,7 +3,7 @@ return +{
     username => 'root',
     password => '',
 
-    sendmail => 0,
+    send_mail => 0,
 
     redis    => {
         host => 'localhost',
