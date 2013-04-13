@@ -5,6 +5,14 @@ return +{
 
     send_mail => 0,
 
+    email => {
+        host => 'localhost',
+        port => 25,
+        ssl  => 0,
+        username => '',
+        password => '',
+    },
+
     redis    => {
         host => 'localhost',
         port => 6379,
