@@ -311,7 +311,7 @@ PrePAN::Web->load_plugin('Web::Auth' => {
                 id          => $github_user_hash->{id},
                 login       => $github_user_hash->{login},
                 gravatar_id => $github_user_hash->{gravatar_id},
-                email       => $github_user_hash->{email},
+                email       => $github_user_hash->{email} || '',
             },
             github_access_token => $access_token,
         });
