@@ -147,10 +147,12 @@ sub oauth {
     my $oauth;
 
     if ($data) {
-        $oauth ||= model->single(oauth => {
+        $oauth = model->single(oauth => {
             external_user_id => $data->{external_user_id},
             service          => $service,
-        }) || model->create_oauth({
+        });
+
+        $oauth ||= model->create_oauth({
             service => $service,
             user_id => $self->id,
         });

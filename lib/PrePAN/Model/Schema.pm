@@ -61,6 +61,7 @@ table {
         session_id
         unread_count
         unread_from
+        no_email_notification
         created
         modified
     );

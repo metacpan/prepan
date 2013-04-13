@@ -96,6 +96,41 @@ sub timeline : Tests {
     isa_ok $user->timeline, 'PrePAN::Timeline';
 }
 
+sub email : Tests {
+    my $self = shift;
+
+    diag 'user has an email';
+    {
+        my $user = $self->create_test_user;
+        my $name = $user->name;
+
+        $user->oauth(github => {
+            external_user_id => $self->model->uuid,
+            info => {
+                login => $name,
+                email => 'test@example.com',
+            },
+        });
+
+        is $user->email, 'test@example.com';
+    }
+
+    diag 'user does not have an email';
+    {
+        my $user = $self->create_test_user;
+        my $name = $user->name;
+
+        $user->oauth(github => {
+            external_user_id => $self->model->uuid,
+            info => {
+                login => $name,
+            },
+        });
+
+        ok !$user->email;
+    }
+}
+
 __PACKAGE__->runtests;
 
 !!1;

@@ -47,6 +47,18 @@
           </div>
         </div>
         <div>
+          <label for="email_notification">Email</label>
+          <div>
+            [%- IF author.email -%]
+            [% author.email %]<br />
+            <input type="checkbox" id="email_notification" name="email_notification" value="1"[% UNLESS author.no_email_notification %] checked="checked"[% END %] />
+            Notify activities via Email
+            [%- ELSE -%]
+            We couldn't retrieve your email address. If you want to be notified via email, set at least 1 email address visibile at <a href="https://github.com/settings/emails">your setting page on GitHub</a>. Then sign in PrePAN again.
+            [%- END # IF author.email -%]
+          </div>
+        </div>
+        <div>
           <label for="url">URL</label>
           <div class="input">
             <input type="text" id="url" name="url" value="[% author.url | html %]" size="50" placeholder="URL" />
