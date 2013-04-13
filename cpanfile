@@ -45,6 +45,7 @@ requires 'Qudo::Parallel::Manager';
 
 requires 'Email::Simple';
 requires 'Email::Sender';
+requires 'Email::Valid';
 
 on develop => sub {
     recommends 'git://github.com/kentaro/cinnamon.git';

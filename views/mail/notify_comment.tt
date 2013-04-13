@@ -1,6 +1,6 @@
 Hi, [% receiver.name %]!
 
-[% subject_user.name %] has posted a comment on the discussion you've been joining.
+[% IF review.is_public %][% subject_user.name %][% ELSE %]someone[% END %] has posted a comment on the discussion you've been joining.
 
 "[% review.comment %]"
 

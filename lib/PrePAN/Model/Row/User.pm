@@ -7,6 +7,8 @@ use PrePAN::Util;
 use PrePAN::Model;
 use PrePAN::Timeline;
 
+use Email::Valid;
+
 sub equals {
     my ($self, $user) = @_;
     return if !$user;
@@ -199,6 +201,14 @@ sub modules {
 sub timeline {
     my $self = shift;
     $self->{__timeline} ||= PrePAN::Timeline->new({ user => $self });
+}
+
+sub should_receive_email_notification {
+    my ($self) = @_;
+    return unless $self->email;
+    return if $self->no_email_notification;
+
+    Email::Valid->address($self->email);
 }
 
 !!1;
