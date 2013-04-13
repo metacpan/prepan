@@ -66,6 +66,7 @@ use PrePAN::Util;
 use PrePAN::Model;
 use PrePAN::Pager;
 use PrePAN::Twitter::PrePAN;
+use PrePAN::Notify;
 
 my %spec   = (
     name    => [
@@ -195,14 +196,10 @@ sub post_review {
     for my $user (@users) {
         next if $self->user->id == $user->id;
 
-        $user->timeline->add({
-            subject_id => $self->anonymouse ? undef : $self->user->short_id,
-            object_id  => $self->module->short_id,
-            verb       => 'comment',
-            info       => {
-                content => $review->comment,
-                created => $review->created.q(),
-            },
+        PrePAN::Notify->notify_comment($user, {
+            subject_user => $self->user,
+            module       => $self->module,
+            review       => $review,
         });
     }
 

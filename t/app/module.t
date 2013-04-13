@@ -78,6 +78,31 @@ sub _create : Test(4) {
     is $module->user_id, $user->id;
 }
 
+sub post_review : Tests {
+    my $self  = shift;
+    my $module_user = $self->create_test_user;
+    my $module = $self->create_test_module(user_id => $module_user->id);
+
+    my $review_user = $self->create_test_user;
+    my $app = PrePAN::App::Module->new;
+    $app->user($review_user);
+    $app->module($module);
+    $app->comment('review comment');
+
+    note "check review is valid";
+    my $review = $app->post_review;
+    is $review->comment, 'review comment';
+    is $review->user_id, $review_user->id;
+    is $review->module_id, $module->id;
+    is $review->anonymouse, 0;
+
+    $module = $module->refetch;
+    is $module->review_count, 1, "review count";
+
+    is $module_user->timeline->count, 1, "notify module user";
+    is $review_user->timeline->count, 0, "not notify review user";
+}
+
 __PACKAGE__->runtests;
 
 !!1;
