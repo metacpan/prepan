@@ -32,6 +32,7 @@ return +{
         default_hooks => ['Qudo::Hook::Serialize::JSON'],
         workers           => [
             'PrePAN::Worker::Twitter::PrePAN',
+            'PrePAN::Worker::Sendmail',
         ],
         work_delay        => 5,
         max_workers       => 3,

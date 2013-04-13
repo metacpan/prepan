@@ -3,6 +3,8 @@ use strict;
 use warnings;
 
 use PrePAN::Util;
+use PrePAN::Email;
+use PrePAN::Qudo::Client;
 
 sub notify_comment {
     my ($class, $user, $review) = @_;
@@ -17,6 +19,8 @@ sub notify_comment {
             created => $review->created.q(),
         },
     });
+
+    $class->_notify_by_email($user, $review);
 }
 
 sub notify_vote {
@@ -39,6 +43,25 @@ sub _notify {
     $timeline->add($entry);
 
     $user->update({ unread_count => $user->unread_count + 1 });
+}
+
+sub _notify_by_email {
+    my ($class, $user, $review) = @_;
+
+    return unless $user->email;
+
+    my $body = $review->comment;
+
+    my $client = PrePAN::Qudo::Client->new;
+    $client->enqueue(
+        'PrePAN::Worker::Sendmail', {
+            arg => {
+                to      => $user->email,
+                Subject => 'notify mail',
+                body    => $body,
+            },
+        },
+    );
 }
 
 1;

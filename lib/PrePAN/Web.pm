@@ -17,6 +17,7 @@ use PrePAN::Util;
 use PrePAN::App;
 use PrePAN::Model;
 use PrePAN::Config;
+use PrePAN::View;
 use PrePAN::Web::Dispatcher;
 
 __PACKAGE__->load_plugins(qw(
@@ -257,40 +258,9 @@ sub render {
     $self->SUPER::render($tmpl, \%params)
 }
 
-{
-    my $view_conf = PrePAN::Config->param('view') || {};
-
-    if (!exists $view_conf->{path}) {
-        $view_conf->{path} = root->subdir('views');
-    }
-
-    my $include_path = root->subdir('views')->stringify;
-    my $view = Tiffany->load(TT => {
-        INCLUDE_PATH   => [ $include_path ],
-        PRE_PROCESS    => [qw(macro.tt)],
-        STASH          => Template::Stash::ForceUTF8->new,
-        LOAD_TEMPLATES => [
-            Template::Provider::Encoding->new(
-                INCLUDE_PATH => $include_path,
-            ),
-        ],
-        FILTERS        => {
-            trim_html  => [
-                sub {
-                    my ($context, $length, $rest) = @_;
-                    return sub {
-                        my $string = shift;
-                        trim_html($string, $length, $rest || '...');
-                    }
-                },
-                1,
-            ],
-        },
-
-        %$view_conf
-    });
-
-    sub create_view { $view }
+my $view = PrePAN::View->new;
+sub create_view {
+    $view;
 }
 
 !!1;
