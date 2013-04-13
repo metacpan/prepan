@@ -7,12 +7,15 @@ use PrePAN::Email;
 use PrePAN::Qudo::Client;
 
 sub notify_comment {
-    my ($class, $user, $review) = @_;
+    my ($class, $user, $args) = @_;
+
+    my $review = $args->{review};
+    my $module = $args->{module};
 
     $class->_notify($user, {
         subject_id => $review->is_public ?
             convert_to_short_id($review->user_id) : undef,
-        object_id  => convert_to_short_id $review->module_id,
+        object_id  => $module->short_id,
         verb       => 'comment',
         info       => {
             content => $review->comment,
@@ -20,7 +23,12 @@ sub notify_comment {
         },
     });
 
-    $class->_notify_by_email($user, $review, 'notify_comment');
+    $class->_notify_by_email($user, 'notify_comment', {
+        subject => "Comment posted on @{[ $module->name ]}",
+        subject_user_id => $review->user_id,
+        review_id       => $review->id,
+        module_id       => $review->module_id,
+    });
 }
 
 sub notify_vote {
@@ -46,19 +54,21 @@ sub _notify {
 }
 
 sub _notify_by_email {
-    my ($class, $user, $review, $template) = @_;
+    my ($class, $user, $template, $args) = @_;
 
     return unless $user->email;
 
-    my $body = $review->comment;
+    my $subject = delete $args->{subject};
 
     my $client = PrePAN::Qudo::Client->new;
     $client->enqueue(
         'PrePAN::Worker::Sendmail', {
             arg => {
-                to       => $user->email,
-                subject  => 'notify mail',
-                template => $template,
+                to          => $user->email,
+                subject     => $subject,
+                template    => $template,
+                receiver_id => $user->id,
+                %$args,
             },
         },
     );

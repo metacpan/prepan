@@ -18,7 +18,10 @@ sub notify_comment : Tests {
         user_id   => $subject_user->id,
     );
 
-    PrePAN::Notify->notify_comment($user, $review);
+    PrePAN::Notify->notify_comment($user, {
+        module => $module,
+        review => $review,
+    });
 
     $user = $user->refetch;
     is $user->unread_count, 1;

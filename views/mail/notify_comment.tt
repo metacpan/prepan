@@ -1,4 +1,4 @@
-Hi, [% module.user.name %]!
+Hi, [% receiver.name %]!
 
 [% subject_user.name %] has posted a comment on the discussion you've been joining.
 
@@ -7,7 +7,7 @@ Hi, [% module.user.name %]!
 http://prepan.org[% module.path %]#comments
 
 If you don't want to receive this kind of email, you can change the setting at:
-http://prepan.org[% user.path %].edit
+http://prepan.org[% receiver.path %].edit
 
 --
 PrePAN

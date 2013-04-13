@@ -197,7 +197,10 @@ sub post_review {
     for my $user (@users) {
         next if $self->user->id == $user->id;
 
-        PrePAN::Notify->notify_comment($user, $review);
+        PrePAN::Notify->notify_comment($user, {
+            module => $self->module,
+            review => $review,
+        });
     }
 
     $review;
