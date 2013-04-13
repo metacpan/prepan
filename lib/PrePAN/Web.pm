@@ -32,8 +32,8 @@ __PACKAGE__->add_trigger(
         $c->user && $c->app->user($c->user);
         $c->app->page($c->req->param('page'));
 
-        if ($c->req->path =~ m{^/user/([[:alnum:]]{10,})}o) {
-            $c->data(author_id => $1);
+        if ($c->req->path =~ m{^/user/([a-z0-9_-]+\@(?:github|twitter))}io) {
+            $c->data(author_name => $1);
             $c->author && $c->app->author($c->author);
         }
 
