@@ -32,6 +32,7 @@ my %COMPACT_OPTIONS = (
     gravatar_id => { alias_for => 'g '},
     login       => { alias_for => 'l' },
     screen_name => { alias_for => 's' },
+    email       => { alias_for => 'e' },
 );
 
 sub to_hash {
