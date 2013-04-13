@@ -16,6 +16,7 @@ create table user (
   session_id   varchar(255) not null default '',
   unread_count int(10) unsigned not null default 0,
   unread_from  timestamp not null default '0000-00-00 00:00:00',
+  no_email_notification tinyint(1) DEFAULT '0',
   created      timestamp not null default '0000-00-00 00:00:00',
   modified     timestamp not null default current_timestamp on update current_timestamp,
 
