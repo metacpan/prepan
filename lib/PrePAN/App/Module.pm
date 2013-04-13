@@ -185,8 +185,9 @@ sub post_review {
     my $review_count = $self->module->review_count || 0;
     $self->module->update({ review_count => $review_count + 1 });
 
-    my %seen;
     my @users = ($self->module->user);
+    my %seen;
+    $seen{$self->module->user->id}++;
     push @users, map {
         $_->user
     } grep {
