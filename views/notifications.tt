@@ -1,7 +1,3 @@
-<script type="text/javascript" src="/js/prepan.js"></script>
-<script type="text/javascript">
-  $(function () { PrePAN.DateTime.init(); });
-</script>
 <ul>
   [%- IF user -%]
     [%- entries = user.timeline.entries(0, 10) -%]
