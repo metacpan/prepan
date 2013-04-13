@@ -210,21 +210,21 @@ post qr{^/module/([[:alnum:]]{10,})/review.create$}o => sub {
 };
 
 # user
-get qr{^/user/(?:[[:alnum:]]{10,})$}o => sub {
+get qr{^/user/(?:[a-z0-9_-]+\@(?:github|twitter))$}io => sub {
     my ($c) = @_;
     return $c->res_404 if !$c->check_author;
 
     $c->render('user');
 };
 
-get qr{^/user/(?:[[:alnum:]]{10,})\.edit$}o => sub {
+get qr{^/user/(?:[a-z0-9_-]+\@(?:github|twitter))\.edit$}o => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_privilege;
 
     $c->render('user.edit');
 };
 
-post qr{^/user/(?:[[:alnum:]]{10,})\.edit$}o => sub {
+post qr{^/user/(?:[a-z0-9_-]+\@(?:github|twitter))\.edit$}o => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_privilege;
 

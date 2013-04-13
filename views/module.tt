@@ -46,7 +46,7 @@
             <span id="feedback-prepan-button" class="button">Good</span>
             <script id="feedback-prepan-template" type="text/x-jquery-tmpl">
               <span>
-                <a href="/user/${short_id}"><img style="vertical-align:middle" src="${profile_image_mini}" title="${name}" alt="${name}" /></a>
+                <a href="/user/${name}"><img style="vertical-align:middle" src="${profile_image_mini}" title="${name}" alt="${name}" /></a>
               </span>
             </script>
           </div>
