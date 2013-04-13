@@ -20,7 +20,7 @@ sub notify_comment {
         },
     });
 
-    $class->_notify_by_email($user, $review);
+    $class->_notify_by_email($user, $review, 'notify_comment');
 }
 
 sub notify_vote {
@@ -46,7 +46,7 @@ sub _notify {
 }
 
 sub _notify_by_email {
-    my ($class, $user, $review) = @_;
+    my ($class, $user, $review, $template) = @_;
 
     return unless $user->email;
 
@@ -56,9 +56,9 @@ sub _notify_by_email {
     $client->enqueue(
         'PrePAN::Worker::Sendmail', {
             arg => {
-                to      => $user->email,
-                Subject => 'notify mail',
-                body    => $body,
+                to       => $user->email,
+                subject  => 'notify mail',
+                template => $template,
             },
         },
     );
