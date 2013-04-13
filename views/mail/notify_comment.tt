@@ -1,1 +1,14 @@
-notify comment
+Hi, [% module.user.name %]!
+
+[% subject_user.name %] has posted a comment on your module.
+
+"[% review.comment %]"
+
+http://prepan.org[% module.path %]#comments
+
+If you don't want to receive this kind of email, you can change the setting at:
+http://prepan.org[% user.path %].edit
+
+--
+PrePAN
+http://prepan.org/
