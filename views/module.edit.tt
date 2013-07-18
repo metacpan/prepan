@@ -33,7 +33,7 @@
         <div>
           <label for="name">Module Name</label>
           <div class="input">
-            <input type="text" id="name" name="name" value="[% module && module.name | html %]" size="50" placeholder="Module Name (requied)" tabindex="1" />
+            <input type="text" id="name" name="name" value="[% module && module.name | html %]" size="50" placeholder="Module Name (required)" tabindex="1" />
           </div>
         </div>
         <div>
