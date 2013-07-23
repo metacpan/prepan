@@ -38,6 +38,9 @@
           <a href="http://www.cpan.org/misc/cpan-faq.html#How_contribute_modules">CPAN Frequently Asked Questions - How do I contribute modules to CPAN?</a>
         </li>
         <li>
+          <a href="http://pause.perl.org/pause/query?ACTION=pause_namingmodules">On the Naming of Modules</a>
+        </li>
+       <li>
           <a href="http://www.cpan.org/modules/04pause.html">The [Perl programming] Authors Upload Server</a>
         </li>
         <li>
