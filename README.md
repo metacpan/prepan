@@ -5,7 +5,7 @@ You need to do three steps to develop PrePAN; setup local database, setup config
 ## Clone this repository
 
 ```sh
-$ git clone git://github.com/prepan-developers/prepan.git
+$ git clone git://github.com/CPAN-API/prepan.git
 $ cd prepan
 ```
 
