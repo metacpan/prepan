@@ -217,14 +217,14 @@ get qr{^/user/(?:[a-z0-9_-]+\@(?:github|twitter))$}io => sub {
     $c->render('user');
 };
 
-get qr{^/user/(?:[a-z0-9_-]+\@(?:github|twitter))\.edit$}o => sub {
+get qr{^/user/(?:[a-z0-9_-]+\@(?:github|twitter))\.edit$}io => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_privilege;
 
     $c->render('user.edit');
 };
 
-post qr{^/user/(?:[a-z0-9_-]+\@(?:github|twitter))\.edit$}o => sub {
+post qr{^/user/(?:[a-z0-9_-]+\@(?:github|twitter))\.edit$}io => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_privilege;
 
