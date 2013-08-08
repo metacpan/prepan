@@ -10,9 +10,10 @@ set user        => 'deployer';
 
 role development => [qw(local.prepan.org)], {
     deploy_to          => '/var/www/prepan',
-    branch             => 'origin/master',
+    branch             => 'origin/use-xbuild',
     service_web_dir    => '/service/web',
     service_worker_dir => '/service/worker',
+    perl_dir           => '/usr/local/bin/perl-5.16.3',
 };
 
 role production => [qw(app-1.us-west-1 app-2.us-west-1)], {
@@ -20,6 +21,7 @@ role production => [qw(app-1.us-west-1 app-2.us-west-1)], {
     branch             => 'origin/master',
     service_web_dir    => '/service/web',
     service_worker_dir => '/service/worker',
+    perl_dir           => '/usr/local/bin/perl-5.16.3',
 };
 
 task deploy => {
@@ -53,8 +55,9 @@ task deploy => {
         db => sub {
             my ($host, @args) = @_;
             my $deploy_to = get('deploy_to');
+            my $perl_dir = get('perl_dir');
             remote {
-                run "cd $deploy_to && ./script/setup.sh";
+                run "export PATH=$perl_dir/bin:\$PATH && cd $deploy_to && ./script/setup.sh";
             } $host;
         },
     },
@@ -72,9 +75,10 @@ task deploy => {
         my ($host, @args) = @_;
         my $deploy_to = get('deploy_to');
         my $branch    = get('branch');
+        my $perl_dir  = get('perl_dir');
 
         remote {
-            run "cd $deploy_to && git checkout . && git fetch origin && git checkout -q $branch && git submodule update --init && carton install";
+            run "export PATH=$perl_dir/bin:\$PATH && cd $deploy_to && git checkout . && git fetch origin && git checkout -q $branch && git submodule update --init && carton install";
         } $host;
     },
 };
