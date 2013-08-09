@@ -10,7 +10,7 @@ set user        => 'deployer';
 
 role development => [qw(local.prepan.org)], {
     deploy_to          => '/var/www/prepan',
-    branch             => 'origin/use-xbuild',
+    branch             => 'origin/master',
     service_web_dir    => '/service/web',
     service_worker_dir => '/service/worker',
     perl_dir           => '/usr/local/perl-prepan',
