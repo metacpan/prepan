@@ -10,7 +10,11 @@ set user        => 'deployer';
 
 role development => [qw(local.prepan.org)], {
     deploy_to          => '/var/www/prepan',
-    branch             => 'origin/master',
+    branch             => sub {
+        my $branch = qx{git symbolic-ref --short HEAD};
+        chomp $branch;
+        return "origin/$branch";
+    },
     service_web_dir    => '/service/web',
     service_worker_dir => '/service/worker',
     perl_dir           => '/usr/local/perl-prepan',
