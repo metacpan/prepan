@@ -9,12 +9,12 @@ $ git clone git://github.com/CPAN-API/prepan.git
 $ cd prepan
 ```
 
-## carton
+## Carton
 
-PrePAN is utilizing [carton](https://metacpan.org/module/MIYAGAWA/carton-v0.9.10/docs/carton.pod) to manage module dependencies. Install dependencies via carton:
+PrePAN is utilizing [Carton](https://metacpan.org/module/Carton) to manage module dependencies. Install dependencies via Carton:
 
 ```sh
-$ cpanm carton
+$ cpanm Carton
 ```
 
 ## Local database setting
@@ -50,6 +50,15 @@ Run below command if you want to run tests.
 
 ```sh
 $ carton exec -- prove -v t/**/*.t
+```
+
+## Update dependency
+
+Edit cpanfile and execute following commands:
+```
+$ carton install
+$ carton bundle
+$ git add cpanfile cpanfile.snapshot vendor
 ```
 
 ## Contact
