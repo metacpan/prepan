@@ -13,7 +13,7 @@ role development => [qw(local.prepan.org)], {
     branch             => 'origin/use-xbuild',
     service_web_dir    => '/service/web',
     service_worker_dir => '/service/worker',
-    perl_dir           => '/usr/local/bin/perl-5.16.3',
+    perl_dir           => '/usr/local/perl-prepan',
 };
 
 role production => [qw(app-1.us-west-1 app-2.us-west-1)], {
@@ -21,7 +21,7 @@ role production => [qw(app-1.us-west-1 app-2.us-west-1)], {
     branch             => 'origin/master',
     service_web_dir    => '/service/web',
     service_worker_dir => '/service/worker',
-    perl_dir           => '/usr/local/bin/perl-5.16.3',
+    perl_dir           => '/usr/local/perl-prepan',
 };
 
 task deploy => {
