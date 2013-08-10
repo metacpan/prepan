@@ -82,7 +82,7 @@ task deploy => {
         my $perl_dir  = get('perl_dir');
 
         remote {
-            run "export PATH=$perl_dir/bin:\$PATH && cd $deploy_to && git checkout . && git fetch origin && git checkout -q $branch && git submodule update --init && carton install";
+            run "export PATH=$perl_dir/bin:\$PATH && cd $deploy_to && git checkout . && git fetch origin && git checkout -q $branch && git submodule update --init && carton install --deployment";
         } $host;
     },
 };
