@@ -52,6 +52,16 @@ Run below command if you want to run tests.
 $ carton exec -- prove -v t/**/*.t
 ```
 
+## Update dependency
+
+Edit cpanfile and run following commands if you want to update dependency.
+
+```sh
+$ carton install
+$ git add cpanfile cpanfile.snapshot
+$ git commit
+```
+
 ## Contact
 
 You can ask [@prepanorg](http://twitter.com/prepanorg/) or [@shiba_yu36](http://twitter.com/shiba_yu36/) if you have a question.
