@@ -18,14 +18,25 @@ role development => [qw(local.prepan.org)], {
     service_web_dir    => '/service/web',
     service_worker_dir => '/service/worker',
     perl_dir           => '/usr/local/perl-prepan',
+    daemontools_prefix => 'development',
 };
 
-role production => [qw(app-1.us-west-1 app-2.us-west-1)], {
+role production => [qw(app-3.us-west-1 app-4.us-west-1)], {
     deploy_to          => '/var/www/prepan',
     branch             => 'origin/master',
     service_web_dir    => '/service/web',
     service_worker_dir => '/service/worker',
     perl_dir           => '/usr/local/perl-prepan',
+    daemontools_prefix => 'production',
+};
+
+role "production-standby" => [qw(app-1.us-west-1 app-2.us-west-1)], {
+    deploy_to          => '/var/www/prepan',
+    branch             => 'origin/master',
+    service_web_dir    => '/service/web',
+    service_worker_dir => '/service/worker',
+    perl_dir           => '/usr/local/perl-prepan',
+    daemontools_prefix => 'production',
 };
 
 task deploy => {
@@ -44,14 +55,14 @@ task deploy => {
         app => sub {
             my ($host, @args) = @_;
             my $deploy_to = get('deploy_to');
-            my $role      = get('role');
+            my $prefix    = get('daemontools_prefix');
 
             remote {
                 for my $service (qw(web worker)) {
                     my $service_dir = get("service_${service}_dir");
 
-                    run "ln -sf $deploy_to/bin/$role.$service.run.sh $service_dir/run";
-                    run "ln -sf $deploy_to/bin/$role.$service.log.run.sh $service_dir/log/run";
+                    run "ln -sf $deploy_to/bin/$prefix.$service.run.sh $service_dir/run";
+                    run "ln -sf $deploy_to/bin/$prefix.$service.log.run.sh $service_dir/log/run";
                 }
             } $host;
         },
