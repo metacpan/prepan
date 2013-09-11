@@ -14,8 +14,7 @@ return +{
     },
 
     redis    => {
-        host => 'localhost',
-        port => 6379,
+        server => 'localhost:6379',
     },
 
     Auth => {
