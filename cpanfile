@@ -34,7 +34,7 @@ requires 'HTML::Trim';
 requires 'Hash::Compact' => '0.05';
 
 requires 'Net::OAuth';
-requires 'Net::Twitter::Lite';
+requires 'Net::Twitter::Lite' => '0.12004';
 
 requires 'LWP';
 requires 'LWP::Protocol::https';
