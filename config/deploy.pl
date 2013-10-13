@@ -48,7 +48,9 @@ task deploy => {
             my $branch     = get('branch');
 
             remote {
-                run "git clone $repository $deploy_to && cd $deploy_to && git checkout -q $branch";
+                run "if [ ! -e $deploy_to ]; then git clone $repository $deploy_to && cd $deploy_to && git checkout -q $branch; fi";
+                sudo "mkdir -p /var/log/prepan";
+                sudo "chown -R deployer:deployer /var/log/prepan";
             } $host;
         },
 
