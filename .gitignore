@@ -2,4 +2,5 @@
 !/local/development.eg.pl
 /config/deploy.rb
 /.carton
-/logs/
+/logs/*
+!/logs/.gitkeep
