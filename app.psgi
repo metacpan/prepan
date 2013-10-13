@@ -25,7 +25,7 @@ my $access_logger = Log::Dispatch->new(
     outputs => [
         [
             'File',
-            mio_level => 'debug',
+            min_level => 'debug',
             max_level => 'debug',
             filename  => $ENV{PREPAN_ACCESSLOG} || 'logs/access.log',
             mode      => '>>',
