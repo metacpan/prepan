@@ -1,7 +1,7 @@
 package PrePAN::Twitter;
 use strict;
 use warnings;
-use parent qw(Net::Twitter::Lite);
+use parent qw(Net::Twitter::Lite::WithAPIv1_1);
 
 use PrePAN::Config;
 
