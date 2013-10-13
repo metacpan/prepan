@@ -44,6 +44,8 @@ builder {
         response_time => 1,
         logger        => sub { $access_logger->debug(@_) };
 
+    enable "Plack::Middleware::HTTPExceptions";
+
     enable 'Plack::Middleware::Session',
         state => Plack::Session::State::Cookie->new(
             session_key => 'prepan',
