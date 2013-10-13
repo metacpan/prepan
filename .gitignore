@@ -2,3 +2,4 @@
 !/local/development.eg.pl
 /config/deploy.rb
 /.carton
+/logs/

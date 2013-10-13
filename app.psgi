@@ -10,6 +10,7 @@ use DBI;
 use Plack::Builder;
 use Plack::Session::Store::DBI;
 use Plack::Session::State::Cookie;
+use Log::Dispatch;
 
 use FindBin;
 use lib "$FindBin::Bin/lib";
@@ -20,11 +21,28 @@ use PrePAN::Web;
 use PrePAN::Config;
 use PrePAN::Util qw(root);
 
+my $access_logger = Log::Dispatch->new(
+    outputs => [
+        [
+            'File',
+            mio_level => 'debug',
+            max_level => 'debug',
+            filename  => $ENV{PREPAN_ACCESSLOG} || 'logs/access.log',
+            mode      => '>>',
+        ],
+    ],
+);
+
 builder {
     enable 'Plack::Middleware::XFramework',
         framework => 'Amon2';
 
     enable 'Plack::Middleware::ReverseProxy';
+
+    enable 'Plack::Middleware::AxsLog',
+        ltsv          => 1,
+        response_time => 1,
+        logger        => sub { $access_logger->debug(@_) };
 
     enable 'Plack::Middleware::Session',
         state => Plack::Session::State::Cookie->new(
