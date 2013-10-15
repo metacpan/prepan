@@ -48,7 +48,7 @@ task deploy => {
             my $branch     = get('branch');
 
             remote {
-                run "git clone $repository $deploy_to && cd $deploy_to && git checkout -q $branch";
+                run "if [ ! -e $deploy_to ]; then git clone $repository $deploy_to && cd $deploy_to && git checkout -q $branch; fi";
             } $host;
         },
 
