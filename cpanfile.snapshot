@@ -2193,6 +2193,32 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.52
       Test::More 0.82
       perl 5.00503
+  Log-Dispatch-2.41
+    pathname: D/DR/DROLSKY/Log-Dispatch-2.41.tar.gz
+    provides:
+      Log::Dispatch 2.41
+      Log::Dispatch::ApacheLog 2.41
+      Log::Dispatch::Base 2.41
+      Log::Dispatch::Code 2.41
+      Log::Dispatch::Email 2.41
+      Log::Dispatch::Email::MIMELite 2.41
+      Log::Dispatch::Email::MailSend 2.41
+      Log::Dispatch::Email::MailSender 2.41
+      Log::Dispatch::Email::MailSendmail 2.41
+      Log::Dispatch::File 2.41
+      Log::Dispatch::File::Locked 2.41
+      Log::Dispatch::Handle 2.41
+      Log::Dispatch::Null 2.41
+      Log::Dispatch::Output 2.41
+      Log::Dispatch::Screen 2.41
+      Log::Dispatch::Syslog 2.41
+      Log::Dispatch::TestUtil undef
+    requirements:
+      Class::Load 0
+      Dist::CheckConflicts 0.02
+      ExtUtils::MakeMaker 6.30
+      Params::Validate 0.15
+      Sys::Syslog 0.25
   MRO-Compat-0.12
     pathname: B/BO/BOBTFISH/MRO-Compat-0.12.tar.gz
     provides:
@@ -2973,6 +2999,19 @@ DISTRIBUTIONS
       Try::Tiny 0
       URI 1.59
       parent 0
+  Plack-Middleware-AxsLog-0.12
+    pathname: K/KA/KAZEBURO/Plack-Middleware-AxsLog-0.12.tar.gz
+    provides:
+      Plack::Middleware::AxsLog 0.12
+    requirements:
+      Apache::LogFormat::Compiler 0.12
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      ExtUtils::CBuilder 0
+      HTTP::Message 6.06
+      Module::Build 0.38
+      Plack 1.0023
+      perl v5.8.5
   Plack-Middleware-ReverseProxy-0.15
     pathname: M/MI/MIYAGAWA/Plack-Middleware-ReverseProxy-0.15.tar.gz
     provides:

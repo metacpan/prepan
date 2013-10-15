@@ -3,6 +3,9 @@ requires 'Plack::Middleware::Session';
 requires 'Plack::Middleware::ReverseProxy';
 requires 'Starman';
 
+requires 'Plack::Middleware::AxsLog';
+requires 'Log::Dispatch';
+
 requires 'Amon2';
 requires 'Amon2::Auth';
 
