@@ -11,7 +11,7 @@ $ cd prepan
 
 ## carton
 
-PrePAN is utilizing [carton](https://metacpan.org/module/MIYAGAWA/carton-v0.9.10/docs/carton.pod) to manage module dependencies. Install dependencies via carton:
+PrePAN is utilizing [Carton](https://metacpan.org/pod/Carton) to manage module dependencies. Install dependencies via carton:
 
 ```sh
 $ cpanm carton
