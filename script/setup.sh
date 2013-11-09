@@ -26,3 +26,13 @@ if ! mysql -uroot -e 'use qudo_test' > /dev/null 2>&1; then
     echo 'setup qudo_test db ...'
     carton exec -- qudo --db=qudo_test --user=root --rdbms=mysql --use_innodb
 fi
+
+if [ ! -e local/development.pl ]; then
+    echo 'copy development config... : local/development.eg.pl -> local/development.pl'
+    cp local/development.eg.pl local/development.pl
+
+    echo ''
+    echo 'NOTICE:'
+    echo 'To start developping prepan, you must setup oauth config.'
+    echo 'Please read README.md to setup.'
+fi
