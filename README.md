@@ -9,31 +9,64 @@ $ git clone git://github.com/CPAN-API/prepan.git
 $ cd prepan
 ```
 
-## carton
+## Execute script/setup.sh
 
-PrePAN is utilizing [Carton](https://metacpan.org/pod/Carton) to manage module dependencies. Install dependencies via carton:
-
-```sh
-$ cpanm carton
-```
-
-## Local database setting
-
-There is a setup script for database setting. Please run below code at PrePAN root directory.
-It also setup database for test.
+Please run below code at PrePAN root directory to build local environment.
 
 ```sh
-$ ./script/setup.sh
+$ script/setup.sh
 ```
 
-## Local config file setting
+This command execute following:
 
-There is the example config file, which is local/development.eg.pl.  Copy and replace it.
+- Install [Carton](https://metacpan.org/pod/Carton) to manage moudle dependency, if carton doesn't exist
+- Install perl module dependency by carton
+- setup db for local development and test
+- copy development config: local/development.eg.pl -> local/development.pl
 
-```sh
-$ cp local/development.eg.pl local/development.pl
+## Setup OAuth
+
+PrePAN uses Twitter and GitHub OAuth, so you must setup OAuth config.
+
+I describes how to setup for twitter.
+
+### Create a new Twitter Application
+
+You can create a new twitter application from https://dev.twitter.com/apps .
+
+1. Press "Create a new application" button
+2. Input Application Details, an example is following
+  - Name: hogehoge prepan local
+  - Description: prepan local development for hogehoge
+  - Website: http://local.prepan.org/
+  - Callback URL: http://local.prepan.org/auth/twitter/callback (callback URL must be input to notice twitter that this application is used by browser)
+3. Press "Create your Twitter application" button
+
+Next, you must change settings,
+
+1. Press "Settings" tab
+2. Change "Application Type"
+  - Access: Read and Write
+  - Check the box about "Allow this application to be used to Sign in with Twitter"
+3. Save settings
+
+Then, you can use this application to develop prepan.
+
+### Write OAuth config on config/development.pl
+
+After create a twitter application, you must write OAuth config on config/development.pl.  Open config/development.pl and write consumer key and consumer secret.
+
+Example:
+```Perl
+    Auth => {
+        Twitter => {
+            consumer_key       => 'abcdefghijk', # your twitter consumer key
+            consumer_secret    => 'consumersecrettttt', # your twitter consumer secret
+            callback_fail_path => '/auth/twitter/failed',
+        },
+    },
 ```
-And replace local/development.pl for your environment, for example twitter consumer key and so on.
+
 
 # How to start local server
 You can use plackup command to start local server.  Please run below at PrePAN root directory.
@@ -42,7 +75,7 @@ You can use plackup command to start local server.  Please run below at PrePAN r
 $ carton exec -- plackup
 ```
 
-Enjoy Hacking!!
+You can access http://localhost:5000/ . Enjoy Hacking!!
 
 ## Local test setting
 
