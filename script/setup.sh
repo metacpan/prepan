@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if ! carton --version > /dev/null 2>&1; then
+    echo 'install Carton ...'
+    cpanm Carton
+fi
+
 if ! mysql -uroot -e 'use prepan' > /dev/null 2>&1; then
     echo 'setup prepan db ...'
     mysql -uroot -e 'CREATE DATABASE prepan'
