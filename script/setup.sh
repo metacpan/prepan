@@ -5,6 +5,9 @@ if ! carton --version > /dev/null 2>&1; then
     cpanm Carton
 fi
 
+echo 'setup perl module dependency...'
+carton install
+
 if ! mysql -uroot -e 'use prepan' > /dev/null 2>&1; then
     echo 'setup prepan db ...'
     mysql -uroot -e 'CREATE DATABASE prepan'
