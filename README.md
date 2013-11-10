@@ -28,6 +28,12 @@ This command execute following:
 
 PrePAN uses Twitter and GitHub OAuth, so you must setup OAuth config.
 
+If you want to use twitter OAuth, create a new Twitter Application, and it requires following settings,
+
+- a browser application
+- Read and Write access
+- Used to Sign in with Twitter
+
 I describes how to setup for twitter.
 
 ### Create a new Twitter Application
