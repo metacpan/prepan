@@ -1,6 +1,10 @@
 # How to setup local development environment
 
-You need to do three steps to develop PrePAN; setup local database, setup config file and install dependency.
+You need to complete several steps below to get yourself ready to develop PrePAN;
+
+1. Cloning this repository
+2. Bootstrapping
+3. OAuth setup
 
 ## Clone this repository
 
@@ -9,40 +13,75 @@ $ git clone git://github.com/CPAN-API/prepan.git
 $ cd prepan
 ```
 
-## carton
+## Bootstrapping with `script/setup.sh`
 
-PrePAN is utilizing [carton](https://metacpan.org/module/MIYAGAWA/carton-v0.9.10/docs/carton.pod) to manage module dependencies. Install dependencies via carton:
-
-```sh
-$ cpanm carton
-```
-
-## Local database setting
-
-There is a setup script for database setting. Please run below code at PrePAN root directory.
-It also setup database for test.
+Run `script/setup.sh` at the PrePAN root directory to bootstrap your environment.
 
 ```sh
-$ ./script/setup.sh
+$ script/setup.sh
 ```
 
-## Local config file setting
+This command does following things:
 
-There is the example config file, which is local/development.eg.pl.  Copy and replace it.
+- Installs [Carton](https://metacpan.org/pod/Carton) to manage moudle dependency, if it's not installed
+- Installs preerequisite modules using `carton` command
+- Sets up databases for development and test
+- Generates a configuration file from `local/development.eg.pl` to `local/development.pl`
 
-```sh
-$ cp local/development.eg.pl local/development.pl
+## OAuth setup
+
+PrePAN uses Twitter and GitHub to authenticate users. You have to, at first, create a new Twitter application.
+
+### Create a new Twitter Application
+
+You can create a new Twitter application on [https://dev.twitter.com/apps](https://dev.twitter.com/apps).
+
+1. Press "Create a new application" button
+2. Input some information for your application, for example:
+  - Name: hogehoge prepan local
+  - Description: prepan local development for hogehoge
+  - Website: http://local.prepan.org/
+  - Callback URL: http://local.prepan.org/auth/twitter/callback (a callback URL must be set to authenticate users via browser)
+3. Press "Create your Twitter application" button
+
+Next, you need to change settings for the app:
+
+1. Press "Settings" tab
+2. Change "Application Type" to:
+  - Access: Read and Write
+  - Check the box about "Allow this application to be used to Sign in with Twitter"
+3. Save settings
+
+Then, you can use this application to develop PrePAN.
+
+### Add OAuth config into config/development.pl
+
+After create a twitter application, you need to add an OAuth config into `config/development.pl`.
+
+Open `config/development.pl` and add a consumer key and a consumer secret for your application.
+
+Example:
+
+```Perl
+    Auth => {
+        Twitter => {
+            consumer_key       => 'abcdefghijk',          # your twitter consumer key
+            consumer_secret    => 'consumersecrettttt',   # your twitter consumer secret
+            callback_fail_path => '/auth/twitter/failed',
+        },
+    },
 ```
-And replace local/development.pl for your environment, for example twitter consumer key and so on.
+
 
 # How to start local server
-You can use plackup command to start local server.  Please run below at PrePAN root directory.
+
+Execute the command below at PrePAN root directory:
 
 ```sh
 $ carton exec -- plackup
 ```
 
-Enjoy Hacking!!
+You can access [http://localhost:5000/](http://localhost:5000/). Enjoy Hacking!!
 
 ## Local test setting
 
@@ -54,7 +93,7 @@ $ carton exec -- prove -v t/**/*.t
 
 ## Update dependency
 
-Edit cpanfile and run following commands if you want to update dependency.
+Edit `cpanfile` and run following commands if you want to update dependency:
 
 ```sh
 $ carton install
