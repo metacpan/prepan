@@ -2,6 +2,9 @@ language: perl
 perl:
   - "5.16"
 
+services:
+  - redis-server
+
 env:
   - PREPAN_ENV=travis
 
