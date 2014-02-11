@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/CPAN-API/prepan.png?branch=master)](https://travis-ci.org/CPAN-API/prepan)
+[![Coverage Status](https://coveralls.io/repos/CPAN-API/prepan/badge.png)](https://coveralls.io/r/CPAN-API/prepan)
 
 # How to setup local development environment
 
