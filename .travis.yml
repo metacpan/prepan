@@ -18,7 +18,7 @@ before_script:
   - script/setup-travis.sh
 
 script:
-  - HARNESS_PERL_SWITCHES=-MDevel::Cover=+ignore,local carton exec prove -lrv t
+  - HARNESS_PERL_SWITCHES="-MDevel::Cover=+ignore,^local/|^t/" carton exec prove -lrv t
 
 after_success:
   - carton exec -- cover -report coveralls
