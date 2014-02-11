@@ -9,6 +9,7 @@ env:
   - PREPAN_ENV=travis
 
 before_install:
+  - cpanm -n Devel::Cover::Report::Coveralls
   - cpanm Carton
 
 install:
@@ -18,7 +19,10 @@ before_script:
   - script/setup-travis.sh
 
 script:
-  - carton exec prove -lrv t
+  - HARNESS_PERL_SWITCHES=-MDevel::Cover=+ignore,local carton exec prove -lrv t
+
+after_success:
+  - cover -report coveralls
 
 notifications:
   email:
