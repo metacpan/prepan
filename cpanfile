@@ -61,4 +61,5 @@ on test => sub {
     requires 'Test::mysqld';
     requires 'Class::Accessor::Lite';
     requires 'String::Random';
+    requires 'Devel::Cover::Report::Coveralls';
 };
