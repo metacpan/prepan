@@ -2,11 +2,17 @@ language: perl
 perl:
   - "5.16"
 
+env:
+  - PREPAN_ENV=travis
+
 before_install:
   - cpanm Carton
 
 install:
   - carton install
+
+before_script:
+  - script/setup-travis.sh
 
 script:
   - carton exec prove -lrv t
