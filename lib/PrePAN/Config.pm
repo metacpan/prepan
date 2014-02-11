@@ -17,12 +17,16 @@ config development => {
     eval { load root->file('local/development.pl')->stringify }
 };
 
-config test        => {
-    parent 'development',
-
+config test => {
     dsn      => 'dbi:mysql:dbname=prepan_test;host=localhost',
     username => 'root',
     password => '',
+
+    send_mail => 0,
+
+    redis    => {
+        server => 'localhost:6379',
+    },
 
     Qudo => {
         databases => [+{
@@ -38,6 +42,12 @@ config test        => {
         max_workers       => 1,
         min_spare_workers => 1,
     },
+};
+
+config travis => {
+    parent 'test',
+    username => 'travis',
+    password => '',
 };
 
 !!1;

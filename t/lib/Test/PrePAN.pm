@@ -4,7 +4,11 @@ use strict;
 use warnings;
 
 BEGIN {
-    $ENV{PREPAN_ENV} = 'test';
+    # force test environment
+    my $env = $ENV{PREPAN_ENV} || '';
+    unless ($env eq 'test' || $env eq 'travis') {
+        $ENV{PREPAN_ENV} = 'test';
+    }
 };
 
 use parent qw(Test::Class);
