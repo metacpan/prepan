@@ -26,4 +26,4 @@ notifications:
       - shibayu36@gmail.com
     on_success: change
     on_failure: always
-  irc: "irc.perl.org#prepan-travis"
+  irc: "irc.perl.org#prepan-dev"
