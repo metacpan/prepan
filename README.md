@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CPAN-API/prepan.png?branch=master)](https://travis-ci.org/CPAN-API/prepan)
+
 # How to setup local development environment
 
 You need to complete several steps below to get yourself ready to develop PrePAN;

@@ -1,0 +1,29 @@
+language: perl
+perl:
+  - "5.16"
+
+services:
+  - redis-server
+
+env:
+  - PREPAN_ENV=travis
+
+before_install:
+  - cpanm Carton
+
+install:
+  - carton install
+
+before_script:
+  - script/setup-travis.sh
+
+script:
+  - carton exec prove -lrv t
+
+notifications:
+  email:
+    recipients:
+      - shibayu36@gmail.com
+    on_success: change
+    on_failure: always
+  irc: "irc.perl.org#prepan-travis"
