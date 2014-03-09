@@ -136,18 +136,6 @@ DISTRIBUTIONS
       Test::More 0.62
       strict 0
       warnings 0
-  Carp-1.26
-    pathname: Z/ZE/ZEFRAM/Carp-1.26.tar.gz
-    provides:
-      Carp 1.26
-      Carp::Heavy 1.26
-    requirements:
-      Exporter 0
-      ExtUtils::MakeMaker 0
-      IPC::Open3 1.0103
-      Test::More 0
-      strict 0
-      warnings 0
   Class-Accessor-0.34
     pathname: K/KA/KASEI/Class-Accessor-0.34.tar.gz
     provides:
@@ -541,7 +529,7 @@ DISTRIBUTIONS
       Class::Factory::Util 1.6
       DateTime 0.12
       DateTime::Format::Strptime 1.04
-      Module::Build 0.36
+      Module::Build 0
       Params::Validate 0.72
       Task::Weaken 0
   DateTime-Format-MySQL-0.04
@@ -1040,7 +1028,7 @@ DISTRIBUTIONS
       DateTime::Locale::zu_ZA undef
     requirements:
       List::MoreUtils 0
-      Module::Build 0.36
+      Module::Build 0
       Params::Validate 0.91
       perl 5.006
   DateTime-TimeZone-1.57
@@ -1748,7 +1736,6 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       Mail::Address 0
-      Net::DNS 0
       Scalar::Util 0
       Test::More 0
       perl 5.006
@@ -1853,47 +1840,6 @@ DISTRIBUTIONS
       Test::More 0
       strict 0
       warnings 0
-  ExtUtils-MakeMaker-6.64
-    pathname: M/MS/MSCHWERN/ExtUtils-MakeMaker-6.64.tar.gz
-    provides:
-      DynaLoader 6.64
-      ExtUtils::Command::MM 6.64
-      ExtUtils::Liblist 6.64
-      ExtUtils::Liblist::Kid 6.64
-      ExtUtils::MM 6.64
-      ExtUtils::MM_AIX 6.64
-      ExtUtils::MM_Any 6.64
-      ExtUtils::MM_BeOS 6.64
-      ExtUtils::MM_Cygwin 6.64
-      ExtUtils::MM_DOS 6.64
-      ExtUtils::MM_Darwin 6.64
-      ExtUtils::MM_MacOS 6.64
-      ExtUtils::MM_NW5 6.64
-      ExtUtils::MM_OS2 6.64
-      ExtUtils::MM_QNX 6.64
-      ExtUtils::MM_UWIN 6.64
-      ExtUtils::MM_Unix 6.64
-      ExtUtils::MM_VMS 6.64
-      ExtUtils::MM_VOS 6.64
-      ExtUtils::MM_Win32 6.64
-      ExtUtils::MM_Win95 6.64
-      ExtUtils::MY 6.64
-      ExtUtils::MakeMaker 6.64
-      ExtUtils::MakeMaker::Config 6.64
-      ExtUtils::MakeMaker::_version 6.64
-      ExtUtils::Mkbootstrap 6.64
-      ExtUtils::Mksymlists 6.64
-      ExtUtils::testlib 6.64
-      MM 6.64
-      MY 6.64
-      in 6.64
-    requirements:
-      Data::Dumper 0
-      DirHandle 0
-      File::Basename 0
-      File::Spec 0.8
-      Pod::Man 0
-      perl 5.006
   File-Copy-Recursive-0.38
     pathname: D/DM/DMUEY/File-Copy-Recursive-0.38.tar.gz
     provides:
@@ -2619,87 +2565,6 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       Test 0
       perl 5.006
-  Net-DNS-0.72
-    pathname: N/NL/NLNETLABS/Net-DNS-0.72.tar.gz
-    provides:
-      Net::DNS 0.72
-      Net::DNS::Domain 1096
-      Net::DNS::DomainName 1096
-      Net::DNS::DomainName1035 1096
-      Net::DNS::DomainName2535 1096
-      Net::DNS::Header 1086
-      Net::DNS::Mailbox 1096
-      Net::DNS::Mailbox1035 1096
-      Net::DNS::Mailbox2535 1096
-      Net::DNS::Nameserver 1096
-      Net::DNS::Packet 1086
-      Net::DNS::Parameters 1074
-      Net::DNS::Question 1074
-      Net::DNS::RR 1094
-      Net::DNS::RR::A 1096
-      Net::DNS::RR::AAAA 1096
-      Net::DNS::RR::AFSDB 1096
-      Net::DNS::RR::APL 1096
-      Net::DNS::RR::APL::Item 1096
-      Net::DNS::RR::CERT 1073
-      Net::DNS::RR::CNAME 1096
-      Net::DNS::RR::DHCID 1096
-      Net::DNS::RR::DNAME 1096
-      Net::DNS::RR::EID 1096
-      Net::DNS::RR::HINFO 1096
-      Net::DNS::RR::HIP 1096
-      Net::DNS::RR::IPSECKEY 1096
-      Net::DNS::RR::ISDN 1096
-      Net::DNS::RR::KX 1096
-      Net::DNS::RR::L32 1096
-      Net::DNS::RR::L64 1096
-      Net::DNS::RR::LOC 1075
-      Net::DNS::RR::LP 1096
-      Net::DNS::RR::MB 1096
-      Net::DNS::RR::MG 1096
-      Net::DNS::RR::MINFO 1096
-      Net::DNS::RR::MR 1096
-      Net::DNS::RR::MX 1096
-      Net::DNS::RR::NAPTR 1096
-      Net::DNS::RR::NID 1096
-      Net::DNS::RR::NIMLOC 1096
-      Net::DNS::RR::NS 1096
-      Net::DNS::RR::NSAP 1096
-      Net::DNS::RR::NULL 1096
-      Net::DNS::RR::OPT 1096
-      Net::DNS::RR::PTR 1096
-      Net::DNS::RR::PX 1096
-      Net::DNS::RR::RP 1096
-      Net::DNS::RR::RT 1096
-      Net::DNS::RR::SOA 1096
-      Net::DNS::RR::SPF 1096
-      Net::DNS::RR::SRV 1096
-      Net::DNS::RR::SSHFP 1096
-      Net::DNS::RR::TKEY 1096
-      Net::DNS::RR::TLSA 1096
-      Net::DNS::RR::TSIG 1090
-      Net::DNS::RR::TXT 1079
-      Net::DNS::RR::X25 1096
-      Net::DNS::Resolver 1088
-      Net::DNS::Resolver::Base 1094
-      Net::DNS::Resolver::MSWin32 1096
-      Net::DNS::Resolver::Recurse 1096
-      Net::DNS::Resolver::UNIX 1096
-      Net::DNS::Resolver::cygwin 1096
-      Net::DNS::Resolver::os2 1096
-      Net::DNS::Text 1079
-      Net::DNS::Update 1096
-      Net::DNS::ZoneFile 1094
-      Net::DNS::ZoneFile::Generator 1094
-      Net::DNS::ZoneFile::Text 1094
-    requirements:
-      Digest::HMAC_MD5 1
-      Digest::MD5 2.12
-      Digest::SHA 5.23
-      ExtUtils::MakeMaker 0
-      IO::Socket 0
-      MIME::Base64 2.11
-      Test::More 0.18
   Net-HTTP-6.06
     pathname: G/GA/GAAS/Net-HTTP-6.06.tar.gz
     provides:
@@ -2795,29 +2660,25 @@ DISTRIBUTIONS
       IO::Socket 0
       POSIX 0
       Socket 0
-  Net-Twitter-Lite-0.12004
-    pathname: M/MM/MMIMS/Net-Twitter-Lite-0.12004.tar.gz
+  Net-Twitter-Lite-0.12006
+    pathname: M/MM/MMIMS/Net-Twitter-Lite-0.12006.tar.gz
     provides:
-      Net::Twitter::Lite 0.12004
-      Net::Twitter::Lite::API::V1 0.12004
-      Net::Twitter::Lite::API::V1_1 0.12004
-      Net::Twitter::Lite::Error 0.12004
-      Net::Twitter::Lite::WithAPIv1_1 0.12004
+      Net::Twitter::Lite 0.12006
+      Net::Twitter::Lite::API::V1 0.12006
+      Net::Twitter::Lite::API::V1_1 0.12006
+      Net::Twitter::Lite::Error 0.12006
+      Net::Twitter::Lite::WithAPIv1_1 0.12006
+      Net::Twitter::Lite::WrapResult 0.12006
     requirements:
       Carp 0
       Crypt::SSLeay 0.5
       Encode 0
-      File::Find 0
-      File::Temp 0
       HTTP::Request::Common 0
       JSON 2.02
       LWP::UserAgent 2.032
       Module::Build 0.3601
       Net::HTTP >= 0, != 6.04, != 6.05
       Net::Netrc 0
-      Test::Fatal 0
-      Test::More 0
-      Test::Simple 0.98
       URI 1.40
       URI::Escape 0
       overload 0
@@ -3791,21 +3652,6 @@ DISTRIBUTIONS
       Test::Exception 0
       Test::More 0.42
       Text::Balanced 0
-  Text-TestBase-0.09
-    pathname: T/TO/TOKUHIROM/Text-TestBase-0.09.tar.gz
-    provides:
-      Data::Section::TestBase undef
-      Test::Base::Less 0.09
-      Text::TestBase 0.09
-      Text::TestBase::Block undef
-    requirements:
-      Class::Accessor::Lite 0
-      Exporter 0
-      Module::Build 0.38
-      Test::More 0.98
-      Test::Requires 0
-      parent 0
-      perl 5.008001
   Text-Xslate-2.0000
     pathname: G/GF/GFUJI/Text-Xslate-2.0000.tar.gz
     provides:
