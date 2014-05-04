@@ -21,16 +21,7 @@ role development => [qw(local.prepan.org)], {
     daemontools_prefix => 'development',
 };
 
-role production => [qw(app-3.us-west-1 app-4.us-west-1)], {
-    deploy_to          => '/var/www/prepan',
-    branch             => 'origin/master',
-    service_web_dir    => '/service/web',
-    service_worker_dir => '/service/worker',
-    perl_dir           => '/usr/local/perl-prepan',
-    daemontools_prefix => 'production',
-};
-
-role "production-standby" => [qw(app-1.us-west-1 app-2.us-west-1)], {
+role production => [qw(app-3.us-west-1)], {
     deploy_to          => '/var/www/prepan',
     branch             => 'origin/master',
     service_web_dir    => '/service/web',
