@@ -4,6 +4,20 @@ use strict;
 use warnings;
 use Cinnamon::DSL;
 
+# At first deploying, run following
+# $ cinnamon development deploy:setup:dir
+# $ cinnamon development deploy:setup:app
+# $ cinnamon development deploy:setup:db
+# $ cinnamon development deploy:config
+# $ cinnamon development deploy:update
+# $ cinnamon development web:start
+# $ cinnamon development worker:start
+#
+# Exec following commands to update.
+# $ cinnamon development deploy:update
+# $ cinnamon development web:restart
+# $ cinnamon development worker:restart
+
 set application => 'prepan';
 set repository  => 'git://github.com/CPAN-API/prepan.git';
 set user        => 'deployer';
