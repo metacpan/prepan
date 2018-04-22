@@ -35,7 +35,16 @@ role development => [qw(local.prepan.org)], {
     daemontools_prefix => 'development',
 };
 
-role production => [qw(app-3.us-west-1)], {
+# role "production-standby" => [qw(app-3.us-west-1b)], {
+#     deploy_to          => '/var/www/prepan',
+#     branch             => 'origin/master',
+#     service_web_dir    => '/service/web',
+#     service_worker_dir => '/service/worker',
+#     perl_dir           => '/usr/local/perl-prepan',
+#     daemontools_prefix => 'production',
+# };
+
+role "production" => [qw(prepan-app-1.us-west-1b)], {
     deploy_to          => '/var/www/prepan',
     branch             => 'origin/master',
     service_web_dir    => '/service/web',
@@ -98,7 +107,7 @@ task deploy => {
         my $perl_dir  = get('perl_dir');
 
         remote {
-            run "export PATH=$perl_dir/bin:\$PATH && cd $deploy_to && git checkout . && git fetch origin && git checkout -q $branch && git submodule update --init && carton install --deployment";
+            run "export PATH=$perl_dir/bin:\$PATH && cd $deploy_to && git checkout . && git fetch origin && git checkout -q $branch && git submodule update --init && carton install";
         } $host;
     },
 };
