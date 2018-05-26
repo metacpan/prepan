@@ -44,7 +44,7 @@ role development => [qw(local.prepan.org)], {
 #     daemontools_prefix => 'production',
 # };
 
-role "production" => [qw(prepan-app-1.us-west-1b)], {
+role "production" => [qw(prepan-app-2.us-west-1b)], {
     deploy_to          => '/var/www/prepan',
     branch             => 'origin/master',
     service_web_dir    => '/service/web',
