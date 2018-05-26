@@ -68,17 +68,6 @@ sub is_facebook_user {
     $self->external_service eq 'facebook';
 }
 
-sub email {
-    my $self  = shift;
-    my $email = '';
-
-    if ($self->is_github_user) {
-        $email = $self->github->email;
-    }
-
-    $email;
-}
-
 sub profile_image {
     my $self = shift;
     my $url;
@@ -201,14 +190,6 @@ sub modules {
 sub timeline {
     my $self = shift;
     $self->{__timeline} ||= PrePAN::Timeline->new({ user => $self });
-}
-
-sub should_receive_email_notification {
-    my ($self) = @_;
-    return unless $self->email;
-    return if $self->no_email_notification;
-
-    Email::Valid->address($self->email);
 }
 
 !!1;

@@ -61,17 +61,6 @@ sub favicon {
     $favicon;
 }
 
-sub email {
-    my $self  = shift;
-    my $email = '';
-
-    if ($self->service eq 'github') {
-        $email = $self->info->param('email');
-    }
-
-    $email;
-}
-
 sub profile_image {
     my $self = shift;
     my $url;
@@ -83,7 +72,7 @@ sub profile_image {
     }
     elsif ($self->service eq 'github') {
         $url = sprintf 'http://www.gravatar.com/avatar/%s?s=48',
-            $self->info->param('gravatar_id'),
+            $self->info->param('gravatar_id') || '',
     }
 
     $url;
@@ -100,7 +89,7 @@ sub profile_image_mini {
     }
     elsif ($self->service eq 'github') {
         $url = sprintf 'http://www.gravatar.com/avatar/%s?s=24',
-            $self->info->param('gravatar_id'),
+            $self->info->param('gravatar_id') || '',
     }
 
     $url;
@@ -117,7 +106,7 @@ sub profile_image_bigger {
     }
     elsif ($self->service eq 'github') {
         $url = sprintf 'http://www.gravatar.com/avatar/%s?s=73',
-            $self->info->param('gravatar_id'),
+            $self->info->param('gravatar_id') || '',
     }
 
     $url;

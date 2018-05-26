@@ -22,13 +22,6 @@ sub notify_comment {
             created => $review->created.q(),
         },
     });
-
-    $class->_notify_by_email($user, 'notify_comment', {
-        subject => "Comment posted on @{[ $module->name ]}",
-        subject_user_id => $review->user_id,
-        review_id       => $review->id,
-        module_id       => $review->module_id,
-    });
 }
 
 sub notify_vote {
@@ -51,27 +44,6 @@ sub _notify {
     $timeline->add($entry);
 
     $user->update({ unread_count => $user->unread_count + 1 });
-}
-
-sub _notify_by_email {
-    my ($class, $user, $template, $args) = @_;
-
-    return unless $user->should_receive_email_notification;
-
-    my $subject = delete $args->{subject};
-
-    my $client = PrePAN::Qudo::Client->new;
-    $client->enqueue(
-        'PrePAN::Worker::Sendmail', {
-            arg => {
-                to          => $user->email,
-                subject     => $subject,
-                template    => $template,
-                receiver_id => $user->id,
-                %$args,
-            },
-        },
-    );
 }
 
 1;

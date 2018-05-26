@@ -83,7 +83,7 @@ sub edit {
         return;
     }
     else {
-        $params->{no_email_notification} = !$self->email_notification;
+        $params->{no_email_notification} = 1;
         $self->user->update($params);
     }
 
