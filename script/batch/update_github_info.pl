@@ -21,7 +21,7 @@ for my $oauth (@$oauths) {
         id          => $data->{id},
         login       => $data->{login},
         gravatar_id => $data->{gravatar_id},
-        email       => $data->{email} || '',
+        email       => '',
     };
 
     if ($dry_run) {
