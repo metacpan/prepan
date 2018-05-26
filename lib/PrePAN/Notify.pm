@@ -56,22 +56,7 @@ sub _notify {
 sub _notify_by_email {
     my ($class, $user, $template, $args) = @_;
 
-    return unless $user->should_receive_email_notification;
-
-    my $subject = delete $args->{subject};
-
-    my $client = PrePAN::Qudo::Client->new;
-    $client->enqueue(
-        'PrePAN::Worker::Sendmail', {
-            arg => {
-                to          => $user->email,
-                subject     => $subject,
-                template    => $template,
-                receiver_id => $user->id,
-                %$args,
-            },
-        },
-    );
+    return;
 }
 
 1;

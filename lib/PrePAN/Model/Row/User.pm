@@ -68,17 +68,6 @@ sub is_facebook_user {
     $self->external_service eq 'facebook';
 }
 
-sub email {
-    my $self  = shift;
-    my $email = '';
-
-    if ($self->is_github_user) {
-        $email = $self->github->email;
-    }
-
-    $email;
-}
-
 sub profile_image {
     my $self = shift;
     my $url;
@@ -205,10 +194,7 @@ sub timeline {
 
 sub should_receive_email_notification {
     my ($self) = @_;
-    return unless $self->email;
-    return if $self->no_email_notification;
-
-    Email::Valid->address($self->email);
+    return 0;
 }
 
 !!1;
