@@ -192,9 +192,4 @@ sub timeline {
     $self->{__timeline} ||= PrePAN::Timeline->new({ user => $self });
 }
 
-sub should_receive_email_notification {
-    my ($self) = @_;
-    return 0;
-}
-
 !!1;
